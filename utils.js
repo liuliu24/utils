@@ -1,5 +1,5 @@
 /**
- * @author:liuyu
+ * @author:juck
  * @timer:2021-02-25
  * @email:4654081@qq.com
  * @version:1.0
@@ -334,8 +334,8 @@ window.utils = {
             return this.indexOf(arr, val) != -1 ? true : false;
         },
         // 数组中删除一个元素
-        remove: function(arr, indexs) {
-            var index = this.indexOf(arr, indexs);
+        remove: function(arr, val) {
+            var index = this.indexOf(arr, val);
             if(index > -1) {
                 arr.splice(index, 1);
             }
@@ -367,12 +367,6 @@ window.utils = {
          */
         arrMin: function(arr) {
             return Math.min.apply(null, arr);
-        },
-        /**
-         * 删除数组元素的方法
-         */
-        removeAry: function(ary, ele) {
-            ary.splice(ary.indexOf(ele), 1);
         },
         /**
          * 将类数组转换为数组的方法
@@ -691,8 +685,8 @@ window.utils = {
             return fileName.substring(pos, fileName.length).toLowerCase();
         },
         // 只获取后缀名
-        getExtension:function (name) {
-            return name.substring(name.lastIndexOf(".")+1)
+        getExtension:function (filename) {
+            return name.substring(filename.lastIndexOf(".")+1)
         },
         // 获取文件名称
         getFileName: function(fileName) {
@@ -716,12 +710,8 @@ window.utils = {
         // 验证是否为文档
         checkDocument: function(fileName) {
             return /(doc|docx|xls|xlsx|pdf|txt|ppt|pptx|rar|zip|html|jsp|sql|htm|shtml|xml)$/ig.test(fileName);
-        },
-
-        /*验证是否为文档*/
-        tmCheckOffice: function(fileName) {
-            return /(doc|docx|xls|xlsx|pdf|txt|ppt|pptx)$/ig.test(fileName);
         }
+
     }
 
     /***************************** 关于文件及字符操作结束 *****************************/
